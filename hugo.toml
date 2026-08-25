@@ -1,7 +1,7 @@
 baseURL = 'https://example.org/'
 locale = 'en-us'
 title = 'Earth Data Community'
-theme = 'book'
+
 
 # Book configuration
 disablePathToLower = true
@@ -138,5 +138,8 @@ defaultContentLanguage = 'en'
       target = "content/docs/galaxy-tools/_index.md"
 
     [[module.imports.mounts]]
-      source = "tools/" #readme about galaxy tools
-      target = "content/docs/galaxy-tools/"
+      source = "tools/" #any .md files within this folder
+      target = "content/docs/galaxy-tools/" #each file will be a sub-section of galaxy-tools
+
+  [[module.imports]]
+    path = "github.com/alex-shpak/hugo-book"
