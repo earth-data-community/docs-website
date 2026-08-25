@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://earth-data-community.github.io/docs-website/'
 locale = 'en-us'
 title = 'Earth Data Community'
 
@@ -146,4 +146,4 @@ defaultContentLanguage = 'en'
 
 [caches]
   [caches.images]
-    dir = ':cacheDir/images
+    dir = ':cacheDir/images'
