@@ -4,6 +4,5 @@ exampleSite/public/
 .hugo_build.lock
 .obsidian
 .vscode
-.vscodium
+.zed
 resources/
-.gitmodules
