@@ -1,9 +1,0 @@
-[submodule "earthdata-documentation/hugo-book"]
-	path = earthdata-documentation/hugo-book
-	url = https://github.com/alex-shpak/hugo-book
-[submodule "earthdata-documentation/themes/book"]
-	path = earthdata-documentation/themes/book
-	url = https://github.com/alex-shpak/hugo-book
-[submodule "content/galaxy-tools"]
-	path = content/galaxy-tools
-	url = https://github.com/earth-data-community/galaxy-tools.git
