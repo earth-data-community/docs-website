@@ -144,6 +144,21 @@ defaultContentLanguage = 'en'
   [[module.imports]]
     path = "github.com/alex-shpak/hugo-book"
 
+# Parameters for github action
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[security.allowContent]
+  mimeTypes = [
+    "text/html",
+    "text/plain",
+    "text/markdown",
+    "image/jpeg",
+    "image/jpg",
+    "image/png",
+    "image/webp",
+    "image/svg+xml",
+    "application/json",
+    "application/pdf"
+  ]
