@@ -1,4 +1,4 @@
-baseURL = 'https://earth-data-community.github.io/docs-website/'
+baseURL = 'https://itsamira.github.io/docs-website/'
 locale = 'en-us'
 title = 'Earth Data Community'
 
@@ -150,5 +150,11 @@ defaultContentLanguage = 'en'
     dir = ':cacheDir/images'
 
 [security]
-  [security.allowContent]
-    allowHTML = true
+  allowContent = [
+    '^text/html$',
+    '^text/markdown$',
+    '^text/plain$',
+    '^image/',
+    '^application/json$',
+    '^application/pdf$'
+  ]
