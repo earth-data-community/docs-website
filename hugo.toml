@@ -148,3 +148,19 @@ defaultContentLanguage = 'en'
 [caches]
   [caches.images]
     dir = ':cacheDir/images
+
+[security]
+  enableInlineShortcodes = false
+  [security.allowContent]
+    mimeTypes = [
+      "text/html",
+      "text/markdown",
+      "text/plain",
+      "image/jpeg",
+      "image/jpg",
+      "image/png",
+      "image/webp",
+      "image/svg+xml",
+      "application/json",
+      "application/pdf"
+    ]
