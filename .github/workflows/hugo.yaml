@@ -118,6 +118,7 @@ jobs:
           hugo build \
             --gc \
             --minify \
+            --config hugo.toml \ 
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/.cache/hugo"
 
