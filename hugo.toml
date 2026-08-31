@@ -196,4 +196,3 @@ defaultContentLanguage = 'en'
     [[params.editLinks.rules]]
       targetPrefix = ""
       sourcePrefix = "content/"
-
