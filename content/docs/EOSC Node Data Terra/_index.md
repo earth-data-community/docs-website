@@ -6,7 +6,7 @@ params:
 ---
 # EOSC Node Data Terra
 
-![](assets/20260831_104940_EOSCNodeDataTerra_ColourPos-scaled.png)
+![](/assets/20260831_104940_EOSCNodeDataTerra_ColourPos-scaled.png)
 
 Data Terra Research Infrastructure brings to the EOSC Federation a unique combination of thematic expertise, operational research services, and interoperable digital infrastructure dedicated to Earth system, environmental and biodiversity sciences. As the French national research e-infrastructure in this domain, Data Terra federates five national data hubs and connects major European research infrastructures, enabling seamless access to multidisciplinary data, services, and scientific workflows.
 
