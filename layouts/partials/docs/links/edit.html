@@ -1,0 +1,51 @@
+{{- $page := .Page -}}
+{{- $url := "" -}}
+{{- $repo := "" -}}
+{{- $branch := "main" -}}
+{{- $resolved := "" -}}
+
+{{- with $page.File -}}
+  {{- $filePath := .Path -}}
+
+  {{- /* Resolve which repo/source this content path maps back to.
+         Entries in params.editLinks are evaluated in order; the first one
+         that resolves the path wins. The local entry (empty targetPrefix)
+         is the catch-all fallback. */ -}}
+  {{- range $page.Site.Params.editLinks -}}
+    {{- if not $resolved -}}
+      {{- $candidate := "" -}}
+
+      {{- /* exact file overrides first */ -}}
+      {{- range .files -}}
+        {{- if eq $filePath .targetPath -}}
+          {{- $candidate = .sourcePath -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* fall back to prefix rules */ -}}
+      {{- if not $candidate -}}
+        {{- range .rules -}}
+          {{- if hasPrefix $filePath .targetPrefix -}}
+            {{- $candidate = printf "%s%s" .sourcePrefix (strings.TrimPrefix .targetPrefix $filePath) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if $candidate -}}
+        {{- $resolved = $candidate -}}
+        {{- $repo = .repo -}}
+        {{- $branch = default "main" .branch -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Defensive fallback for pages owned by this site's repo. */ -}}
+  {{- if not $resolved -}}
+    {{- $repo = $page.Site.Params.BookRepo -}}
+    {{- $resolved = printf "content/%s" $filePath -}}
+  {{- end -}}
+
+  {{- $url = printf "%s/edit/%s/%s" $repo $branch $resolved -}}
+{{- end -}}
+
+{{- return $url -}}

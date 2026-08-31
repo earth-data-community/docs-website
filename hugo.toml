@@ -2,7 +2,43 @@ baseURL = 'https://earth-data-community.github.io/docs-website/'
 locale = 'en-us'
 title = 'Earth Data Community'
 
+# Default bookFlatSection=true for every docs section page (menu shows children
+# at the same level instead of nested). Individual pages can still override it.
+[[cascade]]
+  [cascade.target]
+    kind = '{section,page}'
+    path = '/docs/**'
+  bookFlatSection = true
 
+[module]
+  [[module.imports]]
+    path = "github.com/earth-data-community/galaxy-tools"
+
+    [[module.imports.mounts]]
+      source = "README.md" #readme about galaxy tools
+      target = "content/docs/galaxy-tools/_index.md"
+
+    [[module.imports.mounts]]
+      source = "CONTRIBUTING.md"
+      target = "content/docs/galaxy-tools/how-to-contribute-new-tool.md"
+
+    [[module.imports.mounts]]
+      source = "tools/" #tools/*/*.md only, each tool doc shows as a section under docs/galaxy-tools/tools/
+      target = "content/docs/galaxy-tools/tools/"
+      files = ["**/*.md"]
+
+  [[module.imports]]
+    path = "github.com/alex-shpak/hugo-book" #theme
+
+# Parameters for github action
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[security]
+  [security.allowContent]
+  allowHTML = true
+  
 # Book configuration
 disablePathToLower = true
 enableGitInfo = true
@@ -90,16 +126,18 @@ defaultContentLanguage = 'en'
   # Param is executed as template using .Site, .Page and .GitInfo as context.
   BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
 
-  # (Optional, default none) Set template for edit page link.
-  # When set enabled 'Edit this page' link in the footer of the page.
-  # Param is executed as template using .Site, .Page and .Path as context.
-  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/exampleSite/{{ .Path }}'
+  # (Optional, default none) Enables the 'Edit this page' link in the footer of
+  # the page. The actual href is computed by the layout override
+  # layouts/partials/docs/links/edit.html, which maps the content path back to
+  # the source repo/file via params.editLinks (works for Hugo module content
+  # too). The value below only acts as the on/off switch.
+  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/'
 
   # (Optional, default 'January 2, 2006') Configure the date format used on the pages
   # - In git information
   # - In blog posts
   # https://gohugo.io/functions/time/format/
-  BookDateFormat = 'January 2, 2006'
+  BookDateFormat = '2 January 2006'
 
   # (Optional, default true) Enables search function with fuse.js.,
   # Index is built on fly, therefore it might slowdown your website.
@@ -129,26 +167,33 @@ defaultContentLanguage = 'en'
   # (Optional, experimental, default false) Enables a drop-down menu for translations only if a translation is present.
   BookTranslatedOnly = false
 
-[module]
-  [[module.imports]]
-    path = "github.com/earth-data-community/galaxy-tools"
+# --- Edit link mapping, one entry per module (root = modulePath "") ---
 
-    [[module.imports.mounts]]
-      source = "README.md" #readme about galaxy tools
-      target = "content/docs/galaxy-tools/_index.md"
+  [[params.editLinks]]
+    modulePath = "github.com/earth-data-community/galaxy-tools"
+    repo = "https://github.com/earth-data-community/galaxy-tools"
+    branch = "main"
 
-    [[module.imports.mounts]]
-      source = "tools/" #any .md files within this folder
-      target = "content/docs/galaxy-tools/" #each file will be a sub-section of galaxy-tools
+    # Exact single-file mounts (README.md, CONTRIBUTING.md)
+    [[params.editLinks.files]]
+      targetPath = "docs/galaxy-tools/_index.md"
+      sourcePath = "README.md"
+    [[params.editLinks.files]]
+      targetPath = "docs/galaxy-tools/how-to-contribute-new-tool.md"
+      sourcePath = "CONTRIBUTING.md"
 
-  [[module.imports]]
-    path = "github.com/alex-shpak/hugo-book"
+    # Mounted subtree: docs/galaxy-tools/tools/** -> tools/**
+    # The stripped path already keeps the leading "tools/", so sourcePrefix is empty here.
+    [[params.editLinks.rules]]
+      targetPrefix = "docs/galaxy-tools/"
+      sourcePrefix = ""
 
-# Parameters for github action
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+  [[params.editLinks]]
+    modulePath = ""
+    repo = "https://github.com/earth-data-community/docs-website"
+    branch = "main"
 
-[security]
-  [security.allowContent]
-    allowHTML = true
+    [[params.editLinks.rules]]
+      targetPrefix = ""
+      sourcePrefix = "content/"
+
