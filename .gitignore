@@ -7,6 +7,3 @@ exampleSite/public/
 .vscodium
 resources/
 .gitmodules
-
-/.quarto/
-**/*.quarto_ipynb

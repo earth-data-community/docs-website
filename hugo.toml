@@ -36,8 +36,15 @@ title = 'Earth Data Community'
     dir = ':cacheDir/images'
 
 [security]
-  [security.allowContent]
-  allowHTML = true
+  allowContent = [
+    '^text/html$',
+    '^text/markdown$',
+    '^text/plain$',
+    '^image/',
+    '^application/json$',
+    '^application/pdf$'
+  ]
+
   
 # Book configuration
 disablePathToLower = true
@@ -196,4 +203,3 @@ defaultContentLanguage = 'en'
     [[params.editLinks.rules]]
       targetPrefix = ""
       sourcePrefix = "content/"
-
