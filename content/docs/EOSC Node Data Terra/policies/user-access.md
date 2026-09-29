@@ -27,14 +27,10 @@ The EOSC Node Data Terra provides access to digital services made available with
 11. Your access to the Services may be restricted or suspended for administrative, operational, legal or security reasons, including in the event of a violation of this AUP.  
 12. If you violate this AUP, appropriate measures may be taken, including suspension or termination of your access and, where appropriate, notification of your home organisation, the relevant Service Provider or competent authorities.
 
-## 
-
 ## **Revisions to this Acceptable Use Policy**
 
 The EOSC Node Data Terra reserves the right to revise, amend or modify this AUP when necessary. The current version of the AUP will be made available through the Data Terra EOSC Node landing page.  
 Continued use of the Services after the effective date of a revised AUP constitutes acceptance of the revised version.
-
-## 
 
 ## **Contacts and References**
 
@@ -42,12 +38,10 @@ Administrative contact: [contact@earth-data.eu](mailto:contact@earth-data.eu)
 Security contact: [security@earth-data.eu](mailto:security@earth-data.eu)   
 Privacy Notice: Below
 
-# 
-
 # **Privacy Notice – EOSC Node Data Terra**
 
 The EOSC Node Data Terra respects the applicable legal framework for the protection of personal data, in particular the Regulation (EU) 2016/679 (General Data Protection Regulation – GDPR) and applicable French data protection legislation.  
-This Privacy Policy explains how personal data are processed when users access the services of the EOSC Node Data Terra**,** including its federated authentication and authorisation services.
+This Privacy Policy explains how personal data are processed when users access the services of the EOSC Node Data Terra, including its federated authentication and authorisation services.
 
 ## **1\. Service information**
 
@@ -80,8 +74,6 @@ Depending on the authentication method and the service accessed, the EOSC Node D
 
 The EOSC Node Data Terra only processes attributes that are necessary for the relevant service and its stated purposes.
 
-### 
-
 ### **Federated authentication**
 
 Users may access the service through supported federated identity providers, such as:
@@ -112,8 +104,6 @@ Personal data may be processed for the following purposes:
 * fulfilling applicable legal or regulatory obligations.
 
 Personal data will not be processed for purposes incompatible with those described above.
-
-## 
 
 ## **4\. Legal basis**
 
@@ -159,8 +149,6 @@ The EOSC Node Data Terra applies privacy and security principles by design and b
 You may access or rectify your personal data, or request deactivation of your account, by contacting the Helpdesk. If you have any questions regarding your personal data or your data protection rights, please contact the Helpdesk.  
 Please note that some personal data, such as attributes provided by your Home Organisation (e.g. your university or research institute), may be managed by that organisation. To access or rectify such data, please contact your Home Organisation’s IT helpdesk.  
 Where applicable, you may object to the processing of your personal data by contacting the Helpdesk.
-
-## 
 
 ## **10\. Cookies and similar technologies**
 
