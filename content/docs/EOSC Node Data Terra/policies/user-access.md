@@ -1,11 +1,14 @@
 ---
-title: Acceptable Use Policy
+title: Acceptable Use Policy and User Access Policy
 weight: 1
-version: 1
-date of publication: 29-09-2026
+version: 1.1
+creation date: 29-09-2026
+last modification date: 05-10-2026
+
 ---
 
-# EOSC Node Data Terra Acceptable Use Policy
+# Acceptable Use Policy – EOSC Node Data Terra
+Version updated, 5 October 2026
 
 ## **Introduction**
 
@@ -37,12 +40,26 @@ Continued use of the Services after the effective date of a revised AUP constitu
 
 Administrative contact: [contact@earth-data.eu](mailto:contact@earth-data.eu)   
 Security contact: [security@earth-data.eu](mailto:security@earth-data.eu)   
-Privacy Notice: Below
+
+# User Access Policy – EOSC Node Data Terra
+This User Access Policy (“UAP”) explains who may use the resources and services of the Data Terra Node, and how you obtain access to them.
+
+## **Federated authentication**
+
+- Users may access the service through supported federated identity providers, such as:  
+  - eduGAIN / institutional identity providers;  
+  - ORCID;  
+  - EOSC-compatible AAI services  
+- Some services are open and they can be used anonymously or immediately after signing in. Other services need an access request. The exact attributes received depend on the identity provider and on the requirements of the service being accessed through the Node services catalogue.  
+- When authentication is performed through an institutional identity provider, the service may receive the user's name and email address and, where required, institutional affiliation or other authorised attributes.  
+- If a required attribute is not provided by the user's Home Organisation, the service may ask the user to provide it directly.  
+- When ORCID is used as an authentication or identification provider, only the attributes required by the relevant service are retrieved from ORCID.  
+- The access may be restricted, suspended or withdrawn if the authorisation requirements are not longer met, for administrative, operational, or security reasons, without prior notice and without compensation, or if not compliant with the Acceptable Use Policy or the applicable policies and notices from Data Terra.
 
 # **Privacy Notice – EOSC Node Data Terra**
 
 The EOSC Node Data Terra respects the applicable legal framework for the protection of personal data, in particular the Regulation (EU) 2016/679 (General Data Protection Regulation – GDPR) and applicable French data protection legislation.  
-This Privacy Policy explains how personal data are processed when users access the services of the EOSC Node Data Terra, including its federated authentication and authorisation services.
+This Privacy Policy explains how personal data are processed when users access the services of the EOSC Node Data Terra**,** including its federated authentication and authorisation services.
 
 ## **1\. Service information**
 
@@ -56,8 +73,6 @@ This Privacy Policy explains how personal data are processed when users access t
 | **Jurisdiction / establishment** | France |
 
 The precise allocation of responsibilities under the GDPR may depend on the service accessed. Where another organisation acts as the data controller for a specific service, users will be informed through the privacy notice applicable to that service.
-
-## 
 
 ## **2\. Personal data processed**
 
@@ -74,19 +89,6 @@ Depending on the authentication method and the service accessed, the EOSC Node D
 * technical information and security logs associated with access to the service.
 
 The EOSC Node Data Terra only processes attributes that are necessary for the relevant service and its stated purposes.
-
-### **Federated authentication**
-
-Users may access the service through supported federated identity providers, such as:
-
-* eduGAIN / institutional identity providers;  
-* ORCID;  
-* EOSC-compatible AAI services
-
-The exact attributes received depend on the identity provider and on the requirements of the service being accessed.  
-For example, when authentication is performed through an institutional identity provider, the service may receive the user's name and email address and, where required, institutional affiliation or other authorised attributes.  
-If a required attribute is not provided by the user's Home Organisation, the service may ask the user to provide it directly.  
-When ORCID is used as an authentication or identification provider, only the attributes required by the relevant service are retrieved from ORCID.
 
 ## **3\. Purposes of processing**
 
@@ -165,8 +167,5 @@ The latest version will be made available on the EOSC Node Data Terra website or
 
 The EOSC Node Data Terra is committed to applying the principles of the GDPR.  The EOSC Node also takes into account the applicable EOSC Federation requirements and good practices concerning data protection, security and privacy.
 
-**Data Terra**  
-France
-V1 29-09-2026
 
 
