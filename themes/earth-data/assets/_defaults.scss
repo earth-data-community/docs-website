@@ -1,0 +1,119 @@
+// Used in layout
+$padding-1: 1px !default;
+$padding-4: 0.25rem !default;
+$padding-8: 0.5rem !default;
+$padding-16: 1rem !default;
+
+$body-min-width: 20rem !default;
+$container-max-width: 90rem !default;
+
+$menu-width: 16rem !default;
+$toc-width: 16rem !default;
+
+$mobile-breakpoint: $menu-width + $body-min-width * 1.2 + $toc-width !default;
+
+:root {
+  --font-size: 16px;
+  --font-size-smaller: 0.875rem;
+  --font-size-smallest: 0.75rem;
+
+  --font-heading: "Quicksand", "Trebuchet MS", -apple-system, sans-serif;
+  --font-body: "Roboto", system-ui, "Segoe UI", sans-serif;
+
+  --body-font-weight: 400;
+  --body-background: white;
+  --body-background-tint: transparent;
+  --body-font-color: black;
+
+  --border-radius: 0.625rem;
+}
+
+// Convenience mixing to declare a color and a transparent tint
+@mixin accent($name, $color, $tint: 0.1) {
+  --color-accent-#{$name}: #{$color};
+  --color-accent-#{$name}-tint: #{rgba($color, $tint)};
+}
+
+// Themes — Earth Data brand palette (earth-data.eu design system)
+@mixin theme-light {
+  --body-background: #{$ed-white};
+  --body-background-tint: none;
+  --body-font-color: #{$ed-primary-800};
+
+  --heading-default: #{$ed-primary-800}; // h1, h6
+  --heading-strong: #{$ed-primary-500}; // h2, h5
+  --heading-muted: #{$ed-primary-400}; // h3, h4
+
+  --color-link: #{$ed-primary-500};
+  --color-visited-link: #{$ed-primary-400};
+
+  --color-btn-bg: #{$ed-btn-bg};
+  --color-btn-text: #{$ed-btn-text};
+
+  --color-surface: #{$ed-container}; // cards, code, quote surfaces
+  --color-border: #{$ed-gray-100};
+
+  --icon-filter: none;
+
+  --gray-100: #{$ed-container};
+  --gray-200: #{$ed-gray-100};
+  --gray-500: #{$ed-gray-400};
+
+  @include accent("default", $ed-default-accent);
+  @include accent("note", $ed-note);
+  @include accent("tip", $ed-tip);
+  @include accent("important", $ed-important);
+  @include accent("warning", $ed-warning);
+  @include accent("caution", $ed-caution);
+
+  // Fallback for {{< hint >}} shortcodes
+  @include accent("info", $ed-note);
+  @include accent("success", $ed-tip);
+  @include accent("danger", $ed-caution);
+}
+
+@mixin theme-dark {
+  --body-background: #{$ed-dark-bg};
+  --body-background-tint: none;
+
+  --body-font-color: #{$ed-dark-text};
+
+  --heading-default: #{$ed-dark-text};
+  --heading-strong: #{$ed-dark-strong};
+  --heading-muted: #{$ed-dark-muted};
+
+  --color-link: #{$ed-dark-link};
+  --color-visited-link: #{$ed-dark-visited};
+
+  --color-btn-bg: #{$ed-dark-btn-bg};
+  --color-btn-text: #{$ed-btn-text};
+
+  --color-surface: #{$ed-dark-surface};
+  --color-border: #{$ed-dark-border};
+
+  --icon-filter: brightness(0) invert(1);
+
+  --gray-100: #{$ed-dark-surface};
+  --gray-200: #{$ed-dark-border};
+  --gray-500: #{$ed-gray-300};
+
+  @include accent("default", $ed-dark-strong);
+  @include accent("note", $ed-dark-note);
+  @include accent("tip", $ed-dark-tip);
+  @include accent("important", $ed-dark-important);
+  @include accent("warning", $ed-dark-warning);
+  @include accent("caution", $ed-dark-caution);
+
+  // Fallback for {{< hint >}} shortcodes
+  @include accent("info", $ed-dark-note);
+  @include accent("success", $ed-dark-tip);
+  @include accent("danger", $ed-dark-caution);
+}
+
+@mixin theme-auto {
+  @include theme-light;
+
+  @media (prefers-color-scheme: dark) {
+    @include theme-dark;
+  }
+}

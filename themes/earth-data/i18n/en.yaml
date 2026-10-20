@@ -1,0 +1,14 @@
+- id: Search
+  translation: Search
+
+- id: Edit this page
+  translation: Edit this page
+
+- id: Last modified by
+  translation: Last modified by
+
+- id: Toggle color theme
+  translation: Toggle color theme
+
+- id: bookSearchConfig
+  translation: '{ cache: true }'

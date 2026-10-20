@@ -4,3 +4,5 @@ github.com/earth-data-community/galaxy-tools v0.0.0-20260825150959-af5e3947722f 
 github.com/earth-data-community/galaxy-tools v0.0.0-20260825150959-af5e3947722f/go.mod h1:QkQBBH508pQDP+OnEC8G4xImfoYyJ1temxObsawtuDA=
 github.com/earth-data-community/galaxy-tools v0.0.0-20260826143255-93ac365b3fe2 h1:C2je6Vz0A6xdQqDDiH8JYQT4Mct7YTIIH9Wk/tH/w8s=
 github.com/earth-data-community/galaxy-tools v0.0.0-20260826143255-93ac365b3fe2/go.mod h1:QkQBBH508pQDP+OnEC8G4xImfoYyJ1temxObsawtuDA=
+github.com/imfing/hextra v0.13.0 h1:1zhCYy0tA9ZRErFBlU6NJEgR1HjK69bgd52EmpwnG00=
+github.com/imfing/hextra v0.13.0/go.mod h1:vi+yhpq8YPp/aghvJlNKVnJKcPJ/VyAEcfC1BSV9ARo=

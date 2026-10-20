@@ -1,0 +1,10 @@
+<a href='{{ default "mailto:helpdesk@earth-data.eu" .Site.Params.Helpdesk }}'>
+  <img src="{{ partial "docs/icon" "mail" }}" class="book-icon" alt="" aria-hidden="true" />
+  <span class="book-topbar-label">{{ default "helpdesk@earth-data.eu" .Site.Params.HelpdeskLabel }}</span>
+</a>
+<a href='{{ default "https://github.com/earth-data-community/" .Site.Params.SiteGithub }}'
+  target="_blank" rel="noopener">
+  <img src="{{ partial "docs/icon" "github" }}" class="book-icon" alt="" aria-hidden="true" />
+  <span>GitHub</span>
+</a>
+{{ partial "docs/theme-toggle" . }}

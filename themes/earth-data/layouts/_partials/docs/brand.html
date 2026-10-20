@@ -1,0 +1,13 @@
+<h2 class="book-brand">
+  <a class="flex align-center" href="{{ partial "docs/links/home" . }}">
+    {{- with .Site.Params.BookLogo -}}
+    <img class="book-brand-logo book-brand-logo-light" src="{{ . | relURL }}" alt="{{ $.Site.Title }}" />
+    {{- end -}}
+    {{- with .Site.Params.BookLogoDark -}}
+    <img class="book-brand-logo book-brand-logo-dark" src="{{ . | relURL }}" alt="{{ $.Site.Title }}" />
+    {{- end -}}
+    {{- if not (or .Site.Params.BookLogo .Site.Params.BookLogoDark) -}}
+    <span>{{ .Site.Title }}</span>
+    {{- end -}}
+  </a>
+</h2>

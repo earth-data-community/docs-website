@@ -1,0 +1,17 @@
+name = "Earth Data"
+license = "MIT"
+licenselink = "https://github.com/alex-shpak/hugo-book/blob/main/LICENSE"
+description = "Eurocc/Data Terra EOSC Node documentation theme — a Hugo Book fork restyled with the earth-data.eu design tokens (Quicksand + Roboto, teal palette), with an accessible light/dark theme toggle"
+homepage = "https://github.com/earth-data-community/docs-website"
+tags = ["responsive", "clean", "documentation", "docs", "search", "mobile", "multilingual", "dark-mode"]
+features = ["search", "dark-mode", "toc", "shortcodes", "mermaid", "katex"]
+min_version = "0.158.0"
+
+[author]
+  name = "Earth Data Community"
+  homepage = "https://github.com/earth-data-community/"
+
+[original]
+  name = "Book"
+  homepage = "https://github.com/alex-shpak/hugo-book"
+  repo = "https://github.com/alex-shpak/hugo-book"

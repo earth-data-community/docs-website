@@ -2,6 +2,11 @@ baseURL = 'https://earth-data-community.github.io/docs-website/'
 locale = 'en-us'
 title = 'Earth Data Community'
 
+# Theme — local fork of alex-shpak/hugo-book, restyled with the earth-data.eu
+# design tokens. See themes/earth-data/README.md
+# NOTE: top-level key, must be declared before any [section] table.
+theme = 'earth-data'
+
 # Default bookFlatSection=true for every docs section page (menu shows children
 # at the same level instead of nested). Individual pages can still override it.
 [[cascade]]
@@ -22,13 +27,10 @@ title = 'Earth Data Community'
       source = "CONTRIBUTING.md"
       target = "content/docs/galaxy-tools/how-to-contribute-new-tool.md"
 
-    [[module.imports.mounts]]
-      source = "tools/" #tools/*/*.md only, each tool doc shows as a section under docs/galaxy-tools/tools/
-      target = "content/docs/galaxy-tools/tools/"
-      files = ["**/*.md"]
-
-  [[module.imports]]
-    path = "github.com/alex-shpak/hugo-book" #theme
+    # [[module.imports.mounts]]
+    #   source = "tools/" #tools/*/*.md only, each tool doc shows as a section under docs/galaxy-tools/tools/
+    #   target = "content/docs/galaxy-tools/tools/"
+    #   files = ["**/*.md"]
 
 # Parameters for github action
 [caches]
@@ -106,6 +108,16 @@ defaultContentLanguage = 'en'
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
   BookTheme = 'auto'
 
+  # Brand assets (project static/), light + dark logo variants swapped by the
+  # theme toggle. See themes/earth-data/README.md
+  BookLogo = 'images/EOSCNodeDataTerra.svg'
+  BookLogoDark = 'images/EOSCNodeDataTerra-dark.svg'
+
+  # Top utility bar
+  Helpdesk = 'mailto:helpdesk@earth-data.eu'
+  HelpdeskLabel = 'helpdesk@earth-data.eu'
+  SiteGithub = 'https://github.com/earth-data-community/'
+
   # (Optional, default none) Controls table of contents visibility on right side of pages.
   # Start and end levels can be controlled globally with markup.tableOfContents setting.
   # You can also specify this parameter per page in front matter.
@@ -155,7 +167,8 @@ defaultContentLanguage = 'en'
   # By default partials/docs/comments.html includes Disqus template
   # See https://gohugo.io/content-management/comments/#configure-disqus
   # Can be overwritten by same param in page frontmatter
-  BookComments = true
+  # Disabled: no comment provider is configured for this site (empty block).
+  BookComments = false
 
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.

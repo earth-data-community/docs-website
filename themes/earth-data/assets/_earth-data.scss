@@ -1,0 +1,387 @@
+/* ==========================================================================
+   Earth Data component layer
+   Overlays the_book styles with the earth-data.eu design system:
+   typography, top utility bar, theme toggle, media/brand surfaces, buttons.
+   Imported from book.scss after _shortcodes.scss so these rules win.
+   ========================================================================== */
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+}
+
+.markdown {
+  font-size: $ed-text-base;
+  line-height: 1.5;
+
+  h1 {
+    font-size: $ed-text-3xl;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--heading-default);
+    margin: 1.25em 0 0.6em;
+  }
+
+  h2 {
+    font-size: $ed-text-2xl;
+    font-weight: 500;
+    color: var(--heading-strong);
+  }
+
+  h3 {
+    font-size: $ed-text-xl;
+    color: var(--heading-muted);
+  }
+
+  h4 {
+    font-size: $ed-text-lg;
+    color: var(--heading-muted);
+  }
+
+  h5 {
+    font-size: $ed-text-md;
+    font-weight: 500;
+    color: var(--heading-strong);
+  }
+
+  h6 {
+    font-size: $ed-text-base;
+    font-weight: 500;
+    color: var(--heading-default);
+  }
+
+  a[href] {
+    color: var(--color-link);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-visited-link);
+      text-decoration: underline;
+    }
+  }
+
+  // Code blocks keep the dark snazzy palette on both themes
+  pre {
+    background: #282a36;
+    color: #eff0eb;
+    border-radius: var(--border-radius);
+  }
+
+  code {
+    background: var(--gray-100);
+    border-radius: 0.25rem;
+  }
+
+  pre code {
+    background: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Top utility bar — helpdesk + GitHub + theme toggle
+// Mirrors the thin white strip on top of www.earth-data.eu
+// The height is shared with .book-menu-content/.book-toc-content (position:
+// fixed, see `fixed` mixin) so the sidebars start below the bar.
+// ---------------------------------------------------------------------------
+$topbar-height: 3rem;
+
+.book-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+
+  height: $topbar-height;
+  padding: 0 1rem;
+  font-size: var(--font-size-smaller);
+
+  background: var(--body-background);
+  border-bottom: 1px solid var(--gray-200);
+
+  a[href] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+
+    color: var(--color-link);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-visited-link);
+      text-decoration: underline;
+    }
+  }
+
+  .book-icon {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .book-topbar-label {
+    // keep the icon, drop the (long) email address text on narrow screens
+    display: none;
+  }
+
+  .book-topbar {
+    gap: 0.5rem 1rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Theme toggle (docs/theme-toggle.html, JS in docs/inject/head + inject/body)
+// Shows the icon for the mode you will switch TO:
+//   light/system-now-light  → moon (switch to dark)
+//   dark                     → sun  (switch to light)
+// ---------------------------------------------------------------------------
+.book-theme-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: -0.3em;
+  padding: 0.35em;
+  border-radius: 50%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-link);
+  cursor: pointer;
+
+  .book-icon {
+    height: 1.25em;
+    width: 1.25em;
+    display: block;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--gray-100);
+  }
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+html[data-theme="dark"] {
+  .theme-icon-sun {
+    display: block;
+  }
+
+  .theme-icon-moon {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    .theme-icon-sun {
+      display: block;
+    }
+
+    .theme-icon-moon {
+      display: none;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Brand logo — light/dark variants ([data-theme] driven, see docs/brand.html)
+// _main.scss sizes `.book-brand img` to a 1.5em square (class+element
+// specificity); the two-class selector below outranks it so the wide
+// EOSC/Data Terra logo keeps its aspect ratio.
+.book-brand .book-brand-logo {
+  height: 2em;
+  width: auto;
+  max-width: 100%;
+}
+
+.book-brand-logo-dark {
+  display: none;
+}
+
+html[data-theme="dark"] {
+  .book-brand-logo-dark {
+    display: block;
+  }
+
+  .book-brand-logo-light {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    .book-brand-logo-dark {
+      display: block;
+    }
+
+    .book-brand-logo-light {
+      display: none;
+    }
+  }
+}
+
+.book-brand {
+  span {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: $ed-text-lg;
+    color: var(--heading-default);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Buttons — kit style: pill radius 15px, teal, gradient hover
+// ---------------------------------------------------------------------------
+a.book-btn[href] {
+  display: inline-flex;
+  align-items: center;
+
+  font-family: var(--font-body);
+  font-size: $ed-text-base;
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--color-btn-text);
+  background-color: var(--color-btn-bg);
+  border: 0;
+  border-radius: $ed-btn-radius;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-image: #{$ed-gradient};
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    color: var(--color-btn-text);
+    text-decoration: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Landing page — hero + card grid ({{% columns %}} on `layout: landing`)
+// ---------------------------------------------------------------------------
+.book-layout-landing {
+  .book-hero {
+    padding: 2rem 0 1rem;
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: $ed-display;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--heading-default);
+    }
+
+    .book-hint {
+      margin-block: 0 2rem;
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    .book-hero h1 {
+      letter-spacing: -2px;
+    }
+  }
+
+  .book-columns > ul > li {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    min-width: 16rem;
+
+    h2 {
+      margin: 0 0 0.5em;
+      font-size: $ed-text-lg;
+      font-weight: 500;
+      color: var(--heading-strong);
+    }
+
+    p {
+      margin: 0 0 1.25em;
+    }
+
+    // A columns entry that only carries a CTA ({{<button>}}) should not
+    // render as its own card — let the pill float and align to the middle.
+    &:has(> .book-btn) {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      min-width: auto;
+
+      display: flex;
+      align-items: center;
+      flex-grow: 0; // the ratio="1:2" @style would otherwise stretch the CTA
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Shell — soft boundaries for menu/toc columns
+// The .book-menu-content/.book-toc-content divs are position:fixed (fixed
+// mixin: top 0, bottom 0) — keep them below the top utility bar so the ToC
+// and menu never overlap it.
+// ---------------------------------------------------------------------------
+// Top offset between the fixed sidebar contents and the top utility bar.
+// The two-class selectors match the specificity used by _main.scss —
+// including its wide-screen `top: 1rem` rule (min-width: $container-max-width,
+// e.g. `.book-menu .book-menu-content`). This file is imported later, so with
+// equal specificity these rules win on every viewport width.
+.book-menu .book-menu-content,
+.book-toc .book-toc-content {
+  top: $topbar-height;
+}
+
+.book-menu {
+  border-inline-end: 1px solid var(--gray-200);
+}
+
+.book-toc {
+  border-inline-start: 1px solid var(--gray-200);
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  // keep the fixed menu/toc drawers visually coherent without hard edges
+  .book-menu,
+  .book-toc {
+    border: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Icons / misc
+// ---------------------------------------------------------------------------
+img.book-icon {
+  filter: var(--icon-filter);
+}
+
+.book-footer a[href] {
+  text-decoration: none;
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-visited-link);
+    text-decoration: underline;
+  }
+}

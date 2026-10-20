@@ -1,0 +1,33 @@
+@import "defaults";
+@import "variables";
+
+@import "normalize";
+@import "utils";
+@import "main";
+@import "fonts";
+@import "print";
+
+@import "markdown";
+@import "shortcodes";
+
+// Earth Data component layer (earth-data.eu design system)
+@import "earth-data";
+
+// Custom defined styles, theme mixins also placed there
+@import "custom";
+
+// Select theme mixing based on site parameter
+:root {
+  @include theme-{{ default "light" .Site.Params.BookTheme }};
+}
+
+// Explicit light/dark choice stored by the theme toggle
+// (docs/inject/head.html reads `ed-theme` from localStorage and sets
+// <html data-theme>; higher specificity than the :root rules above).
+html[data-theme="light"] {
+  @include theme-light;
+}
+
+html[data-theme="dark"] {
+  @include theme-dark;
+}

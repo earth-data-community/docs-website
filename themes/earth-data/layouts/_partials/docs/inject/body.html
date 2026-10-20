@@ -1,0 +1,22 @@
+<script>
+  /* Theme toggle: cycles light <-> dark, persists in localStorage (ed-theme).
+     Without a stored choice the site follows the OS preference (auto). */
+  (function () {
+    document.addEventListener("click", function (ev) {
+      if (!ev.target.closest || !ev.target.closest("[data-theme-toggle]")) {
+        return;
+      }
+      var root = document.documentElement;
+      var explicitDark = root.getAttribute("data-theme") === "dark";
+      var systemDark =
+        !root.getAttribute("data-theme") &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var next = explicitDark || systemDark ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("ed-theme", next);
+      } catch (e) {}
+    });
+  })();
+</script>

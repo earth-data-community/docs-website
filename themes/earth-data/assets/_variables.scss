@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Earth Data brand tokens
+   Extracted from the earth-data.eu design system (WordPress/Elementor kit
+   CSS, see https://www.earth-data.eu/). Sass layer; CSS custom properties
+   for light/dark are declared in _defaults.scss via the theme mixins.
+   ========================================================================== */
+
+// Brand palette (Elementor global colors)
+$ed-primary-800: #112b2b; // primary-800
+$ed-primary-500: #1f4f4f; // primary-500 — main teal, links/headings
+$ed-primary-400: #4c7272; // primary-400
+$ed-primary-200: #98aeae; // primary-200 — teal for text on dark
+$ed-container: #f7f8f8; // container surface
+$ed-white: #ffffff;
+
+// Neutral greys from the kit
+$ed-gray-0: #fafafa;
+$ed-gray-100: #eaeaea;
+$ed-gray-200: #e9eded;
+$ed-gray-300: #bac8c8;
+$ed-gray-400: #698989;
+
+// Accent colors from the kit
+$ed-accent: #a8148a; // magenta accent
+$ed-pink: #da6582; // header notification pink
+
+// Button system (kit: pill radius 15px, gradient hover 274deg)
+$ed-btn-bg: #4c7272;
+$ed-btn-text: #ffffff;
+$ed-btn-radius: 15px;
+$ed-gradient: linear-gradient(274deg, #1f4f4f 12%, #4c7272 100%);
+
+// Semantic accent colors, derived on-brand (used by notes/hints/alerts)
+$ed-note: #4c7272;
+$ed-tip: #2e7d5b;
+$ed-important: #a8148a;
+$ed-warning: #b45b0d;
+$ed-caution: #c0392b;
+$ed-default-accent: #1f4f4f;
+
+// Dark theme derivation
+$ed-dark-bg: #071111;
+$ed-dark-surface: #142828;
+$ed-dark-border: #233a3a;
+$ed-dark-muted-border: #233a3a;
+$ed-dark-text: #eaeaea;
+$ed-dark-muted: #8ab4b4;
+$ed-dark-strong: #98aeae;
+$ed-dark-link: #98aeae;
+$ed-dark-visited: #bac8c8;
+$ed-dark-note: #7fa9a9;
+$ed-dark-tip: #77b794;
+$ed-dark-important: #de8fc8;
+$ed-dark-warning: #dd9a45;
+$ed-dark-caution: #e2867c;
+$ed-dark-btn-bg: #355656;
+
+// Type ramp (kit values, tuned for docs reading)
+$ed-text-base: 1rem; // 16px Roboto body
+$ed-text-md: 1.125rem; // 18px
+$ed-text-lg: 1.3125rem; // 21px (kit h4 / menu titles)
+$ed-text-xl: 1.625rem; // 26px
+$ed-text-2xl: 2rem; // 32px  (docs h2)
+$ed-text-3xl: 2.625rem; // 42px (docs h1, kit h1 mobile floor)
+// Landing h1: kit 71px → 40px mobile. Inner arithmetic must stay out of Sass
+// scope (incompatible units), hence the unquoted string.
+$ed-display: unquote("clamp(2.5rem, 1.2rem + 3.4vw, 4.4375rem)");

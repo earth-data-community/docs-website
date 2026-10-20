@@ -7,3 +7,7 @@ exampleSite/public/
 .vscodium
 resources/
 .gitmodules
+/.quarto/
+**/*.quarto_ipynb
+.agents/
+skills-lock.json

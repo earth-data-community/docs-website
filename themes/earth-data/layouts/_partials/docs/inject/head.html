@@ -1,0 +1,11 @@
+<script>
+  /* Apply an explicit light/dark choice before the first paint (theme toggle). */
+  (function () {
+    try {
+      var theme = localStorage.getItem("ed-theme");
+      if (theme === "dark" || theme === "light") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    } catch (e) {}
+  })();
+</script>
