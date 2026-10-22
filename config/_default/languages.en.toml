@@ -14,11 +14,12 @@ title = "Earth Data Community"
   logo = "img/EOSCNodeDataTerra.svg"
   secondaryLogo = "img/EOSCNodeDataTerra-dark.svg"
 
-  description = "Documentation and guides for EOSC Node Data Terra — Earth System, environmental and biodiversity research tools and services."
-  copyright = "Earth Data Community"
+  description = "Documentation and guides for EOSC Node Data Terra — Earth System, environmental and biodiversity research data, tools and services."
+  # "{ year }" is replaced with the current year by the theme's footer partial.
+  copyright = "© { year } Earth Data Community · Built with [Hugo](https://gohugo.io/) & [Blowfish](https://blowfish.page/)"
 
 [params.author]
-  name = "Earth Data Community"
+  name = "EOSC Node Data Terra"
   email = "mailto:helpdesk@earth-data.eu"
   image = "img/logo-data-gaia_light.png"
   headline = "Documentation hub for Earth System tools"

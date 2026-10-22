@@ -20,6 +20,13 @@ enableEmoji = true
 # matter (falling back to full content).
 summaryLength = 0
 
+# Date resolution for pages lacking front-matter dates: explicit `date` wins,
+# otherwise the first git commit date (gitinfo). :fileModTime is intentionally
+# omitted — CI checkouts would give every page the checkout timestamp.
+[frontmatter]
+  date = ['date', ':git']
+  lastmod = [':git', 'lastmod']
+
 [pagination]
   pagerSize = 100
 

@@ -1,5 +1,6 @@
 ---
 weight: 1
+title: "Policies"
 ---
 
 # Policies and procedural steps

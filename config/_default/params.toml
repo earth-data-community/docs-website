@@ -13,7 +13,7 @@ enableCodeCopy = true
 enableStructuredBreadcrumbs = false
 replyByEmail = false
 
-disableTextInHeader = false
+disableTextInHeader = true # logo-only header (site title text hidden)
 highlightCurrentMenuArea = true
 
 fingerprintAlgorithm = "sha512" # valid: "sha512" (default), "sha384", "sha256"
@@ -22,13 +22,16 @@ giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [header]
-  layout = "basic" # valid: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur, floating
+  layout = "floating" # valid: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur, floating
 
 [footer]
   showMenu = true
   showCopyright = true
   showThemeAttribution = false
-  showAppearanceSwitcher = true # light/dark toggle (auto reset via right-click)
+  # In Blowfish v3.9.x this flag renders the light/dark toggle button in the
+  # HEADER (desktop + mobile menu), not the footer. Right-click resets to
+  # "auto" (OS preference) and clears the stored choice.
+  showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
@@ -53,6 +56,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showHeadingAnchors = true
   showPagination = true
   showReadingTime = false
+  showWordCount = false
   showTaxonomies = true
   showTableOfContents = true
 
@@ -64,6 +68,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showLikes = false
   showDate = true
   showDateUpdated = false
+  groupByYear = false # docs sections list children flat; would print "0001"
 
 # --- Earth Data site-specific params ---------------------------------------
 

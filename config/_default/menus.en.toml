@@ -5,12 +5,12 @@
 [[main]]
   name = "Documentation"
   pageRef = "docs"
-  weight = 10
+  weight = 1
 
 [[main]]
   name = "Blog"
   pageRef = "posts"
-  weight = 20
+  weight = 2
 
 [[main]]
   identifier = "helpdesk"
@@ -18,7 +18,7 @@
   title = "helpdesk@earth-data.eu"
   pre = "envelope"
   url = "mailto:helpdesk@earth-data.eu"
-  weight = 30
+  weight = 3
 
 [[main]]
   identifier = "github"
@@ -26,4 +26,11 @@
   title = "Earth Data Community on GitHub"
   pre = "github"
   url = "https://github.com/earth-data-community/"
-  weight = 40
+  weight = 4
+
+[[main]]
+  identifier = "eoscdt"
+  name = "EOSC Node Data Terra"
+  title = "EOSC Node Data Terra portal"
+  url = "https://www.earth-data.eu/"
+  weight = 5

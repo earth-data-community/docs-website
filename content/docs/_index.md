@@ -1,4 +1,6 @@
-# Introduction
+---
+title: "Introduction"
+---
 
 ## Getting started with Earth Data Community Documentation
 

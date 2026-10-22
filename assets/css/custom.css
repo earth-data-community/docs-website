@@ -210,6 +210,12 @@ h1.landing-rise-1 {
   color: var(--color-neutral-900);
 }
 
+/* Dark mode: hero stays legible (light ink over the #0A1616 page surface,
+   same treatment as html.dark .prose h1 above) */
+html.dark h1.landing-rise-1 {
+  color: var(--color-neutral-200);
+}
+
 /* Feature cards: kit card surface (soft teal-grey, 0.75rem radius) */
 article.group.rounded-2xl {
   border-radius: 0.75rem;
