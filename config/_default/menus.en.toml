@@ -1,0 +1,29 @@
+# -- Main Menu --
+# Shown in the header. The helpdesk mail + GitHub links replace the earth-data
+# fork's top utility bar, the appearance switcher lives in the footer.
+
+[[main]]
+  name = "Documentation"
+  pageRef = "docs"
+  weight = 10
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 20
+
+[[main]]
+  identifier = "helpdesk"
+  name = "Helpdesk"
+  title = "helpdesk@earth-data.eu"
+  pre = "envelope"
+  url = "mailto:helpdesk@earth-data.eu"
+  weight = 30
+
+[[main]]
+  identifier = "github"
+  name = "GitHub"
+  title = "Earth Data Community on GitHub"
+  pre = "github"
+  url = "https://github.com/earth-data-community/"
+  weight = 40

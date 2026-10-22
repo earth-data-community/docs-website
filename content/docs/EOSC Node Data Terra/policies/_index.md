@@ -1,7 +1,5 @@
 ---
 weight: 1
-params:
-  bookCollapseSection: true
 ---
 
 # Policies and procedural steps

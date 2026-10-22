@@ -1,0 +1,29 @@
+disabled = false
+locale = "en-US"
+weight = 1
+title = "Earth Data Community"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+
+  # Brand logos are resolved from site assets/ by Blowfish and swapped
+  # automatically between light and dark appearance (logo / secondaryLogo).
+  logo = "img/EOSCNodeDataTerra.svg"
+  secondaryLogo = "img/EOSCNodeDataTerra-dark.svg"
+
+  description = "Documentation and guides for EOSC Node Data Terra — Earth System, environmental and biodiversity research tools and services."
+  copyright = "Earth Data Community"
+
+[params.author]
+  name = "Earth Data Community"
+  email = "mailto:helpdesk@earth-data.eu"
+  image = "img/logo-data-gaia_light.png"
+  headline = "Documentation hub for Earth System tools"
+  bio = "Documentation and how-tos for Earth System, environmental and biodiversity research tools."
+  links = [
+    { email = "mailto:helpdesk@earth-data.eu" },
+    { github = "https://github.com/earth-data-community/" },
+  ]

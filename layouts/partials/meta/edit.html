@@ -1,0 +1,70 @@
+{{- /*
+  Site override of layouts/partials/meta/edit.html (Blowfish).
+  Resolves the "edit this page" link through params.editLinks: mounted
+  module content (galaxy-tools README/CONTRIBUTING, tools/**) maps back to
+  its source repo & path instead of appending the site file path.
+  Called with the page as context (same interface as the theme partial).
+*/ -}}
+
+{{- $page := . -}}
+{{- $url := "" -}}
+{{- $repo := "" -}}
+{{- $branch := "main" -}}
+{{- $resolved := "" -}}
+
+{{- with $page.File -}}
+  {{- $filePath := .Path -}}
+
+  {{- /* Entries in params.editLinks are evaluated in order; the first one
+         that resolves a path wins. The entry with an empty targetPrefix is
+         the catch-all fallback (this repo, content/ prefix). */ -}}
+  {{- range site.Params.editLinks -}}
+    {{- if not $resolved -}}
+      {{- $candidate := "" -}}
+
+      {{- /* exact file overrides first */ -}}
+      {{- range .files -}}
+        {{- if eq $filePath .targetPath -}}
+          {{- $candidate = .sourcePath -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* fall back to prefix rules */ -}}
+      {{- if not $candidate -}}
+        {{- range .rules -}}
+          {{- if hasPrefix $filePath .targetPrefix -}}
+            {{- $candidate = printf "%s%s" .sourcePrefix (strings.TrimPrefix .targetPrefix $filePath) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if $candidate -}}
+        {{- $resolved = $candidate -}}
+        {{- $repo = .repo -}}
+        {{- $branch = default "main" .branch -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Defensive fallback for pages owned by this site's repo. */ -}}
+  {{- if not $resolved -}}
+    {{- $repo = "https://github.com/earth-data-community/docs-website" -}}
+    {{- $branch = "main" -}}
+    {{- $resolved = printf "content/%s" $filePath -}}
+  {{- end -}}
+
+  {{- $url = printf "%s/edit/%s/%s" $repo $branch $resolved -}}
+{{- end -}}
+
+{{- if $url -}}
+<span class="mb-[2px]">
+  <a
+    href="{{ $url }}"
+    class="text-lg hover:text-primary-500"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="{{ i18n "article.edit_title" }}"
+    ><span class="inline-block align-text-bottom">{{ partial "icon.html" "edit" }}</span></a
+  >
+</span>
+{{- end -}}

@@ -1,8 +1,6 @@
 ---
 title: EOSC Node Data Terra
 weight: 1
-params:
-  bookFlatSection: true
 ---
 # EOSC Node Data Terra
 
