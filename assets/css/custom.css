@@ -1,0 +1,295 @@
+/* ==========================================================================
+   Earth Data component layer for Blowfish
+   Recreates the retired earth-data hugo-book fork's look (earth-data.eu
+   Elementor kit) on top of Blowfish components. Loaded automatically AFTER
+   the theme bundle, so plain declarations here win over theme utilities of
+   equal specificity.
+
+   Palette lives in assets/css/schemes/earth-data.css (Blowfish slots).
+   Semantic surfaces/borders are declared below as `--ed-surface/--ed-border`
+   so components can reuse the exact kit values in both light and dark.
+   ========================================================================== */
+
+:root {
+  --ed-surface: #f7f8f8; /* kit container surface (cards, code, callouts) */
+  --ed-border: #eaeaea; /* kit hairline grey */
+  --ed-white: #ffffff;
+  --ed-btn-bg: #4c7272;
+  --ed-btn-text: #ffffff;
+  --ed-btn-radius: 15px;
+  --ed-gradient: linear-gradient(274deg, #1f4f4f 12%, #4c7272 100%);
+  --border-radius: 0.625rem;
+}
+
+html.dark {
+  --ed-surface: #142828; /* kit dark surface */
+  --ed-border: #233a3a; /* kit dark border */
+  --ed-btn-bg: #355656; /* kit dark button background */
+}
+
+/* ---------------------------------------------------------------------------
+   Self-hosted brand webfonts (latin subset, variable).
+   Files live in static/fonts/ so the bundle (css/main.bundle.css) references
+   them with a stable relative URL. font-display: swap avoids paint blocking.
+   --------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/quicksand-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/roboto-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/roboto-var-italic.woff2") format("woff2");
+}
+
+/* ---------------------------------------------------------------------------
+   Typography — Roboto body 16px + Quicksand headings, kit type ramp
+   (42/32/26/21/18/16px) and heading colors (default/strong/muted).
+   --------------------------------------------------------------------------- */
+body.text-lg {
+  font-size: 1rem; /* Blowfish sets text-lg; the kit body is 16px Roboto */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", "Trebuchet MS", -apple-system, sans-serif;
+  line-height: 1.25;
+}
+
+/* Heading ramp for markdown content (kit: h1 500 weight, h2-h4 bold,
+   h5/h6 500; colors default #112B2B / strong #1F4F4F / muted #4C7272) */
+.prose h1 {
+  font-size: 2.625rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 1.25em 0 0.6em;
+  color: var(--color-neutral-900);
+}
+
+.prose h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-600);
+}
+
+.prose h3 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--color-primary-500);
+}
+
+.prose h4 {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  color: var(--color-primary-500);
+}
+
+.prose h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-primary-600);
+}
+
+.prose h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-neutral-900);
+}
+
+html.dark .prose h1,
+html.dark .prose h6 {
+  color: var(--color-neutral-200);
+}
+
+html.dark .prose h2,
+html.dark .prose h5 {
+  color: var(--color-primary-400);
+}
+
+html.dark .prose h3,
+html.dark .prose h4 {
+  color: var(--color-neutral-400);
+}
+
+/* Article/section titles outside the prose body — kit h1 (42px, Quicksand) */
+#single_header h1 {
+  font-size: 2.625rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Prose links: teal, underline on hover (was .markdown a[href]) */
+.prose a:hover,
+.prose a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   Surfaces & borders — kit values on Blowfish components
+   --------------------------------------------------------------------------- */
+/* Code blocks: dark snazzy palette on both themes, kit radius */
+.prose pre {
+  background-color: #282a36 !important;
+  color: #eff0eb;
+  border-radius: var(--border-radius);
+}
+
+.prose pre code {
+  background: none;
+}
+
+/* Inline code: inherit body color on a soft surface (light/dark kit values) */
+.prose :not(pre) > code {
+  background-color: var(--ed-surface);
+  color: inherit;
+  border-radius: 0.25rem;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none;
+}
+
+/* Table borders use the kit hairline */
+.prose thead,
+.prose tbody td {
+  border-color: var(--ed-border);
+}
+
+/* ---------------------------------------------------------------------------
+   Buttons — kit style: pill radius 15px, teal, gradient 274° hover
+   Targets the Blowfish `button` shortcode (<a role="button">).
+   --------------------------------------------------------------------------- */
+a[role="button"] {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ed-btn-radius) !important;
+  background-color: var(--ed-btn-bg) !important;
+  color: var(--ed-btn-text) !important;
+  font-family: "Roboto", system-ui, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.75rem 1.5rem !important;
+  box-shadow: none;
+}
+
+a[role="button"]:hover,
+a[role="button"]:focus-visible {
+  background-image: var(--ed-gradient);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------------------------------------------------------
+   Landing homepage — kit display ramp for the hero headline
+   --------------------------------------------------------------------------- */
+h1.landing-rise-1 {
+  font-size: clamp(2.5rem, 1.2rem + 3.4vw, 4.4375rem);
+  font-weight: 500; /* kit 500, not Blowfish's font-black */
+  letter-spacing: -0.02em;
+  color: var(--color-neutral-900);
+}
+
+/* Dark mode: hero stays legible (light ink over the #0A1616 page surface,
+   same treatment as html.dark .prose h1 above) */
+html.dark h1.landing-rise-1 {
+  color: var(--color-neutral-200);
+}
+
+/* Feature cards: kit card surface (soft teal-grey, 0.75rem radius) */
+article.group.rounded-2xl {
+  border-radius: 0.75rem;
+  background-color: var(--ed-surface);
+  border-color: var(--ed-border);
+  box-shadow: none;
+}
+
+article.group.rounded-2xl:hover {
+  background-color: var(--ed-surface);
+  border-color: var(--color-primary-300);
+}
+
+/* ---------------------------------------------------------------------------
+   Admonitions (obsidian-style callouts) — kit semantic accents
+   Light: 10% tint over white. Dark: 10% tint over #071111. Text inherits
+   the body color in both themes (matches the old .book-hint styles).
+   --------------------------------------------------------------------------- */
+:root {
+  --adm-note-border: #4c7272;
+  --adm-note-bg: #edf1f1;
+  --adm-note-text: #112b2b;
+
+  --adm-tip-border: #2e7d5b;
+  --adm-tip-bg: #eaf2ee;
+  --adm-tip-text: #112b2b;
+
+  --adm-important-border: #a8148a;
+  --adm-important-bg: #f6ecf3;
+  --adm-important-text: #112b2b;
+
+  --adm-warning-border: #b45b0d;
+  --adm-warning-bg: #f8efe7;
+  --adm-warning-text: #112b2b;
+
+  --adm-caution-border: #c0392b;
+  --adm-caution-bg: #f9ebea;
+  --adm-caution-text: #112b2b;
+}
+
+html.dark {
+  --adm-note-border: #7fa9a9;
+  --adm-note-bg: #132020;
+  --adm-note-text: #eaeaea;
+
+  --adm-tip-border: #77b794;
+  --adm-tip-bg: #12221e;
+  --adm-tip-text: #eaeaea;
+
+  --adm-important-border: #de8fc8;
+  --adm-important-bg: #1d1e23;
+  --adm-important-text: #eaeaea;
+
+  --adm-warning-border: #dd9a45;
+  --adm-warning-bg: #1c1f16;
+  --adm-warning-text: #eaeaea;
+
+  --adm-caution-border: #e2867c;
+  --adm-caution-bg: #1d1d1c;
+  --adm-caution-text: #eaeaea;
+}
+
+/* ---------------------------------------------------------------------------
+   Brand logo in the header — wide EOSC/Data Terra wordmark
+   (Blowfish default squares logos at 5rem; the kit logo is 1837×263)
+   --------------------------------------------------------------------------- */
+span.logo svg {
+  height: 2.5rem;
+  width: auto;
+  max-width: 60vw;
+}
+
+img.logo {
+  height: 2.5rem;
+  width: auto;
+  max-width: 60vw;
+}

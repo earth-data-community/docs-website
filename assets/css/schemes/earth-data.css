@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Earth Data scheme (earth-data.eu design system)
+   Maps the retired earth-data hugo-book fork's brand tokens onto Blowfish's
+   palette slots. A single 50–900 ramp per palette drives BOTH light and dark
+   modes: Blowfish composes dark mode by picking the opposite end of the same
+   ramp (e.g. `bg-neutral-800` for dark page backgrounds).
+
+   Source tokens (themes/earth-data/assets/_variables.scss + _defaults.scss):
+   teal primary #1F4F4F/#4C7272/#112B2B/#98AEAE, greys #EAEAEA...#071111,
+   magenta accent #A8148A, pink #DA6582.
+   ========================================================================== */
+
+:root {
+  /* Page background (light) and dark-mode body text / surfaces on primary */
+  --color-neutral: 255, 255, 255;
+
+  /* Teal-tinted greys (kit container + gray ramp, dark surfaces at 700-900) */
+  --color-neutral-50: 248, 248, 248; /* #F8F8F8 — inline-code / soft surfaces */
+  --color-neutral-100: 233, 237, 237; /* #E9EDED — hover surfaces */
+  --color-neutral-200: 234, 234, 234; /* #EAEAEA — light borders */
+  --color-neutral-300: 228, 232, 232; /* #E4E8E8 — card borders / dark body text */
+  --color-neutral-400: 138, 180, 180; /* #8AB4B4 — dark muted text */
+  --color-neutral-500: 105, 137, 137; /* #698989 — light muted text */
+  --color-neutral-600: 35, 58, 58; /* #233A3A — dark borders */
+  --color-neutral-700: 17, 43, 43; /* #112B2B — light body text */
+  --color-neutral-800: 10, 22, 22; /* #0A1616 — dark page background */
+  --color-neutral-900: 19, 44, 44; /* #132C2C — light headings / dark card surface */
+
+  /* Teal primary ramp (#1F4F4F family) */
+  --color-primary-50: 240, 243, 243; /* #F0F3F3 */
+  --color-primary-100: 232, 237, 237; /* #E8EDED — 10% teal tint surfaces */
+  --color-primary-200: 184, 200, 200; /* #B8C8C8 */
+  --color-primary-300: 127, 169, 169; /* #7FA9A9 — dark muted headings */
+  --color-primary-400: 152, 174, 174; /* #98AEAE — dark links/strong headings */
+  --color-primary-500: 76, 114, 114; /* #4C7272 — buttons, quote borders */
+  --color-primary-600: 31, 79, 79; /* #1F4F4F — light links, strong headings */
+  --color-primary-700: 76, 114, 114; /* #4C7272 — dark button hover */
+  --color-primary-800: 53, 86, 86; /* #355656 — dark button background */
+  --color-primary-900: 19, 32, 32; /* #132020 — dark tint surfaces */
+
+  /* Magenta/pink accent ramp (#A8148A, #DA6582) */
+  --color-secondary-50: 250, 240, 245; /* #FAF0F5 */
+  --color-secondary-100: 244, 224, 233; /* #F4E0E9 */
+  --color-secondary-200: 233, 192, 211; /* #E9C0D3 */
+  --color-secondary-300: 222, 143, 200; /* #DE8FC8 — dark important accent */
+  --color-secondary-400: 218, 101, 130; /* #DA6582 — pink */
+  --color-secondary-500: 190, 59, 125; /* #BE3B7D */
+  --color-secondary-600: 168, 20, 138; /* #A8148A — magenta accent */
+  --color-secondary-700: 168, 20, 138; /* #A8148A — secondary code accent */
+  --color-secondary-800: 139, 16, 114; /* #8B1072 */
+  --color-secondary-900: 110, 13, 90; /* #6E0D5A */
+}

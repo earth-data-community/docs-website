@@ -1,0 +1,104 @@
+# -- Theme Options (Blowfish) --
+# Configured to mirror the earth-data.eu design (previous earth-data theme):
+# teal color scheme, self-hosted brand fonts (see assets/css/custom.css),
+# native light/dark switch (auto = OS preference when unset), right-side TOC,
+# breadcrumbs, search, per-module "edit this page" links.
+
+colorScheme = "earth-data"
+defaultAppearance = "light" # autoSwitch below reproduces the old 'auto' theme
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+enableStructuredBreadcrumbs = false
+replyByEmail = false
+
+disableTextInHeader = true # logo-only header (site title text hidden)
+highlightCurrentMenuArea = true
+
+fingerprintAlgorithm = "sha512" # valid: "sha512" (default), "sha384", "sha256"
+
+giteaDefaultServer = "https://git.fsfe.org"
+forgejoDefaultServer = "https://v11.next.forgejo.org"
+# Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
+thumbnailAspectRatio = "4.5"
+
+[header]
+  layout = "floating" # valid: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur, floating
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = false
+  # In Blowfish v3.9.x this flag renders the light/dark toggle button in the
+  # HEADER (desktop + mobile menu), not the footer. Right-click resets to
+  # "auto" (OS preference) and clears the stored choice.
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "landing" # valid: page, profile, hero, card, background, landing, custom
+  showRecent = false
+
+[article]
+  showDate = true
+  showDateOnlyInArticle = true # lists/cards show the publish date only
+  showDateUpdated = true # last-modified date from git info (was BookLastChangeLink)
+  showViews = true
+  showLikes = false
+  showAuthor = false
+  showHero = false
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
+  showBreadcrumbs = true # replaces the lost hugo-book sidebar for context
+  showDraftLabel = true
+  showEdit = true # edit link resolved per-module via params.editLinks below
+  editAppendPath = false # handled inside the meta/edit.html override
+  seriesOpened = false
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = false
+  showWordCount = false
+  showTaxonomies = true
+  showTableOfContents = true
+
+[list]
+  showHero = false
+  showBreadcrumbs = false
+  showSummary = true
+  showViews = false
+  showLikes = false
+  showDate = true
+  showDateUpdated = false
+  groupByYear = false # docs sections list children flat; would print "0001"
+
+# --- Earth Data site-specific params ---------------------------------------
+
+# Edit-link mapping, one entry per module (root = modulePath "").
+# Consumed by layouts/partials/meta/edit.html override.
+[[editLinks]]
+  modulePath = "github.com/earth-data-community/galaxy-tools"
+  repo = "https://github.com/earth-data-community/galaxy-tools"
+  branch = "main"
+
+  # Exact single-file mounts (README.md, CONTRIBUTING.md)
+  [[editLinks.files]]
+    targetPath = "docs/galaxy-tools/_index.md"
+    sourcePath = "README.md"
+  [[editLinks.files]]
+    targetPath = "docs/galaxy-tools/how-to-contribute-new-tool.md"
+    sourcePath = "CONTRIBUTING.md"
+
+  # Mounted subtree: docs/galaxy-tools/tools/** -> tools/**
+  [[editLinks.rules]]
+    targetPrefix = "docs/galaxy-tools/"
+    sourcePrefix = ""
+
+[[editLinks]]
+  modulePath = ""
+  repo = "https://github.com/earth-data-community/docs-website"
+  branch = "main"
+
+  [[editLinks.rules]]
+    targetPrefix = ""
+    sourcePrefix = "content/"
