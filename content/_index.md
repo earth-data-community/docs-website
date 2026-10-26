@@ -1,13 +1,8 @@
 ---
 title: "Earth Data Community Documentation"
-heroCaption: "EOSC Node Data Terra · Environment"
+heroCaption: "Experience the EOSC Federation"
 heroLead: "How-tos, tutorials and technical documentation on Earth System, environmental and biodiversity research tools — aggregated from community repositories."
-heroButtons:
-  - label: "Learn more"
-    url: "about/"
-  - label: "Explore the docs"
-    url: "docs/"
-    style: "outline" # "primary" (default) or "outline"
+
 ---
 
 >This site is still under development, more content coming soon - stay tuned :)

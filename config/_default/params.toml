@@ -20,6 +20,8 @@ fingerprintAlgorithm = "sha512" # valid: "sha512" (default), "sha384", "sha256"
 
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
+# Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
+thumbnailAspectRatio = "4.5"
 
 [header]
   layout = "floating" # valid: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur, floating
@@ -42,7 +44,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showDate = true
   showDateOnlyInArticle = true # lists/cards show the publish date only
   showDateUpdated = true # last-modified date from git info (was BookLastChangeLink)
-  showViews = false
+  showViews = true
   showLikes = false
   showAuthor = false
   showHero = false
@@ -62,7 +64,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [list]
   showHero = false
-  showBreadcrumbs = true
+  showBreadcrumbs = false
   showSummary = true
   showViews = false
   showLikes = false

@@ -28,9 +28,3 @@
   url = "https://github.com/earth-data-community/"
   weight = 4
 
-[[main]]
-  identifier = "eoscdt"
-  name = "EOSC Node Data Terra"
-  title = "EOSC Node Data Terra portal"
-  url = "https://www.earth-data.eu/"
-  weight = 5
