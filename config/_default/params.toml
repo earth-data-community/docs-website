@@ -21,7 +21,7 @@ fingerprintAlgorithm = "sha512" # valid: "sha512" (default), "sha384", "sha256"
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
 # Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
-thumbnailAspectRatio = "4.5"
+thumbnailAspectRatio = "1.5"
 
 [header]
   layout = "floating" # valid: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur, floating
@@ -44,7 +44,7 @@ thumbnailAspectRatio = "4.5"
   showDate = true
   showDateOnlyInArticle = true # lists/cards show the publish date only
   showDateUpdated = true # last-modified date from git info (was BookLastChangeLink)
-  showViews = true
+  showViews = false
   showLikes = false
   showAuthor = false
   showHero = false
@@ -63,7 +63,7 @@ thumbnailAspectRatio = "4.5"
   showTableOfContents = true
 
 [list]
-  showHero = false
+  showHero = true
   showBreadcrumbs = false
   showSummary = true
   showViews = false
@@ -71,6 +71,10 @@ thumbnailAspectRatio = "4.5"
   showDate = true
   showDateUpdated = false
   groupByYear = false # docs sections list children flat; would print "0001"
+  cardView = true
+  heroStyle = 'background'
+  orderByWeight = true
+
 
 # --- Earth Data site-specific params ---------------------------------------
 

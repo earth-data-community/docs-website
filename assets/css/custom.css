@@ -11,20 +11,20 @@
    ========================================================================== */
 
 :root {
-  --ed-surface: #f7f8f8; /* kit container surface (cards, code, callouts) */
-  --ed-border: #eaeaea; /* kit hairline grey */
-  --ed-white: #ffffff;
-  --ed-btn-bg: #4c7272;
-  --ed-btn-text: #ffffff;
+  --ed-surface: oklch(97.84% 0.0011 197.14); /* kit container surface (cards, code, callouts) */
+  --ed-border: oklch(93.70% 0.0000 89.88); /* kit hairline grey */
+  --ed-white: oklch(100.00% 0.0000 89.88);
+  --ed-btn-bg: oklch(52.38% 0.0429 195.92);
+  --ed-btn-text: oklch(100.00% 0.0000 89.88);
   --ed-btn-radius: 15px;
-  --ed-gradient: linear-gradient(274deg, #1f4f4f 12%, #4c7272 100%);
+  --ed-gradient: linear-gradient(274deg, oklch(39.50% 0.0516 195.27) 12%, oklch(52.38% 0.0429 195.92) 100%);
   --border-radius: 0.625rem;
 }
 
 html.dark {
-  --ed-surface: #142828; /* kit dark surface */
-  --ed-border: #233a3a; /* kit dark border */
-  --ed-btn-bg: #355656; /* kit dark button background */
+  --ed-surface: oklch(26.00% 0.0260 195.67); /* kit dark surface */
+  --ed-border: oklch(32.95% 0.0288 195.84); /* kit dark border */
+  --ed-btn-bg: oklch(42.79% 0.0386 195.81); /* kit dark button background */
 }
 
 /* ---------------------------------------------------------------------------
@@ -77,7 +77,7 @@ h6 {
 }
 
 /* Heading ramp for markdown content (kit: h1 500 weight, h2-h4 bold,
-   h5/h6 500; colors default #112B2B / strong #1F4F4F / muted #4C7272) */
+   h5/h6 500; colors default oklch(26.87% 0.0319 195.42) / strong oklch(39.50% 0.0516 195.27) / muted oklch(52.38% 0.0429 195.92)) */
 .prose h1 {
   font-size: 2.625rem;
   font-weight: 500;
@@ -89,7 +89,7 @@ h6 {
 .prose h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-primary-600);
+  color: var(--color-primary-500);
 }
 
 .prose h3 {
@@ -149,8 +149,8 @@ html.dark .prose h4 {
    --------------------------------------------------------------------------- */
 /* Code blocks: dark snazzy palette on both themes, kit radius */
 .prose pre {
-  background-color: #282a36 !important;
-  color: #eff0eb;
+  background-color: oklch(28.82% 0.0221 277.51) !important;
+  color: oklch(95.30% 0.0067 115.71);
   border-radius: var(--border-radius);
 }
 
@@ -210,7 +210,7 @@ h1.landing-rise-1 {
   color: var(--color-neutral-900);
 }
 
-/* Dark mode: hero stays legible (light ink over the #0A1616 page surface,
+/* Dark mode: hero stays legible (light ink over the oklch(18.89% 0.0172 195.79) page surface,
    same treatment as html.dark .prose h1 above) */
 html.dark h1.landing-rise-1 {
   color: var(--color-neutral-200);
@@ -231,51 +231,51 @@ article.group.rounded-2xl:hover {
 
 /* ---------------------------------------------------------------------------
    Admonitions (obsidian-style callouts) — kit semantic accents
-   Light: 10% tint over white. Dark: 10% tint over #071111. Text inherits
+   Light: 10% tint over white. Dark: 10% tint over oklch(16.77% 0.0152 195.80). Text inherits
    the body color in both themes (matches the old .book-hint styles).
    --------------------------------------------------------------------------- */
 :root {
-  --adm-note-border: #4c7272;
-  --adm-note-bg: #edf1f1;
-  --adm-note-text: #112b2b;
+  --adm-note-border: oklch(52.38% 0.0429 195.92);
+  --adm-note-bg: oklch(95.51% 0.0043 197.09);
+  --adm-note-text: oklch(26.87% 0.0319 195.42);
 
-  --adm-tip-border: #2e7d5b;
-  --adm-tip-bg: #eaf2ee;
-  --adm-tip-text: #112b2b;
+  --adm-tip-border: oklch(53.14% 0.0946 161.86);
+  --adm-tip-bg: oklch(95.40% 0.0100 164.87);
+  --adm-tip-text: oklch(26.87% 0.0319 195.42);
 
-  --adm-important-border: #a8148a;
-  --adm-important-bg: #f6ecf3;
-  --adm-important-text: #112b2b;
+  --adm-important-border: oklch(50.20% 0.2081 338.87);
+  --adm-important-bg: oklch(95.29% 0.0141 336.15);
+  --adm-important-text: oklch(26.87% 0.0319 195.42);
 
-  --adm-warning-border: #b45b0d;
-  --adm-warning-bg: #f8efe7;
-  --adm-warning-text: #112b2b;
+  --adm-warning-border: oklch(56.81% 0.1393 53.18);
+  --adm-warning-bg: oklch(95.70% 0.0145 64.34);
+  --adm-warning-text: oklch(26.87% 0.0319 195.42);
 
-  --adm-caution-border: #c0392b;
-  --adm-caution-bg: #f9ebea;
-  --adm-caution-text: #112b2b;
+  --adm-caution-border: oklch(54.33% 0.1740 29.70);
+  --adm-caution-bg: oklch(95.08% 0.0153 22.40);
+  --adm-caution-text: oklch(26.87% 0.0319 195.42);
 }
 
 html.dark {
-  --adm-note-border: #7fa9a9;
-  --adm-note-bg: #132020;
-  --adm-note-text: #eaeaea;
+  --adm-note-border: oklch(70.44% 0.0453 196.17);
+  --adm-note-bg: oklch(23.15% 0.0181 195.97);
+  --adm-note-text: oklch(93.70% 0.0000 89.88);
 
-  --adm-tip-border: #77b794;
-  --adm-tip-bg: #12221e;
-  --adm-tip-text: #eaeaea;
+  --adm-tip-border: oklch(72.62% 0.0836 159.47);
+  --adm-tip-bg: oklch(23.61% 0.0231 176.63);
+  --adm-tip-text: oklch(93.70% 0.0000 89.88);
 
-  --adm-important-border: #de8fc8;
-  --adm-important-bg: #1d1e23;
-  --adm-important-text: #eaeaea;
+  --adm-important-border: oklch(74.79% 0.1197 337.67);
+  --adm-important-bg: oklch(23.61% 0.0097 276.66);
+  --adm-important-text: oklch(93.70% 0.0000 89.88);
 
-  --adm-warning-border: #dd9a45;
-  --adm-warning-bg: #1c1f16;
-  --adm-warning-text: #eaeaea;
+  --adm-warning-border: oklch(73.64% 0.1281 69.71);
+  --adm-warning-bg: oklch(23.29% 0.0173 122.72);
+  --adm-warning-text: oklch(93.70% 0.0000 89.88);
 
-  --adm-caution-border: #e2867c;
-  --adm-caution-bg: #1d1d1c;
-  --adm-caution-text: #eaeaea;
+  --adm-caution-border: oklch(71.55% 0.1147 26.91);
+  --adm-caution-bg: oklch(23.04% 0.0019 106.55);
+  --adm-caution-text: oklch(93.70% 0.0000 89.88);
 }
 
 /* ---------------------------------------------------------------------------

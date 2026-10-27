@@ -47,14 +47,3 @@ v0.14.0 (MIT, kept under `LICENSE`) restyled with the
   override any file of this theme with the same path).
 * Keep `theme-light` / `theme-dark` / `theme-auto` mixin names: `book.scss`
   generates the correct mixin from the `BookTheme` site parameter.
-
-## Site parameters (see the root `hugo.toml`)
-
-`BookTheme`, `BookLogo`, `BookLogoDark`, `BookFavicon`, `BookSearch`,
-`BookLastChangeLink`, `BookEditLink` (+ `params.editLinks` mapping),
-`BookComments`, `Helpdesk`, `HelpdeskLabel`, `SiteGithub`.
-
-## Credits
-
-Based on [Book theme](https://github.com/alex-shpak/hugo-book) by Alex Shpak,
-MIT licensed — the `html-head.html` attribution comment is preserved.

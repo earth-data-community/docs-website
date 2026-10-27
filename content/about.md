@@ -1,9 +1,9 @@
 ---
 title: About
-description: "The Earth Data Community brings together researchers, research infrastructures, and software developers working across Earth System Science."
 ---
-
+{{< lead >}}
 The Earth Data Community brings together researchers, research infrastructures, and software developers working across Earth System Science.
+{{< /lead >}}
 
 This initiative aims to:
 

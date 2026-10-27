@@ -1,10 +1,8 @@
 ---
 title: Onboarding procedure
-weight: 4
+weight: 2
 ---
 
-# Onboarding procedures
+## How to contribute research products
 
-## How to contribute as Data Source
-
-## How to provide Service 
+## How to provide services 
