@@ -1,10 +1,8 @@
 ---
-title: "Earth Data Community projects"
-description: "Learn about some of our projects."
-cardView: true
+title: "Earth Data Community"
 
 ---
-
-
-
+{{< lead >}}
+Browse available documentations by projects.
+{{< /lead >}}
 

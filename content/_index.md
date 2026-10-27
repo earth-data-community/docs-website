@@ -10,7 +10,7 @@ heroLead: Find resources Earth System, environmental and biodiversity research t
 The Earth Data Community brings together researchers, research infrastructures, and software developers working across Earth System, environmental and biodiversity. 
 {{< /feature >}}
 
-{{< feature icon="search" title="What will I find here?" url="docs/" label="Explore documentations" >}}
+{{< feature icon="search" title="What can I find here?" url="docs/" label="Explore documentations" >}}
 How-tos, tutorials, and documentation on Earth system, Environment, and Biodiversity research tools and services - aggregated across repositories and organised by service, from the EOSC Node Data Terra architecture to how to contribute your own.
 {{< /feature >}}
 

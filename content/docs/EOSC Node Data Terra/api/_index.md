@@ -1,8 +1,9 @@
 ---
 title: API Documentations
-weight: 1
+weight: 3
 
 ---
-# API Documentations
 
-- Resource Catalogue : https://resources-dev.earth-data.eu/redoc
+# Resource Catalogue 
+Swagger : https://resources.earth-data.eu/docs
+API documentation: https://resources.earth-data.eu/redoc
