@@ -5,11 +5,10 @@ heroLead: "How-tos, tutorials and technical documentation on Earth System, envir
 
 ---
 
->This site is still under development, more content coming soon - stay tuned :)
 
 {{< feature-grid >}}
 {{< feature icon="globe" title="What is Earth Data Community?" url="about/" label="Learn more" >}}
-The Earth Data Community brings together researchers, research infrastructures, and software developers working across Earth System Science. Read the overview to learn more about Earth Data, our community and how to contribute.
+The Earth Data Community brings together researchers, research infrastructures, and software developers working across Earth System, environmental and biodiversity. Read the overview to learn more about Earth Data, our community and how to contribute.
 {{< /feature >}}
 
 {{< feature icon="search" title="What will I find here?" url="docs/" label="Explore documentations" >}}
