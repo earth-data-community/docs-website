@@ -1,8 +1,12 @@
 ---
 title: Earth Data Community
 heroCaption: ""
-heroLead: Find resources Earth System, environmental and biodiversity research tools and services made by and for the community.
+heroLead: Find resources Earth System, environmental and biodiversity research tools and services
 ---
+{{< typeit   tag=h4
+  lifeLike=true >}}
+Built by the community, for the community
+{{< /typeit >}}
 
 
 {{< feature-grid >}}
