@@ -64,7 +64,7 @@ thumbnailAspectRatio = "1.5"
 
 [list]
   showHero = true
-  showBreadcrumbs = true
+  showBreadcrumbs = false
   showSummary = true
   showViews = false
   showLikes = false
