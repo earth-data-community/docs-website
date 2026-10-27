@@ -12,4 +12,5 @@ resources/
 .agents/
 skills-lock.json
 .frontmatter
+frontmatter.json
 
