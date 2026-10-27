@@ -11,6 +11,6 @@ resources/
 **/*.quarto_ipynb
 .agents/
 skills-lock.json
-.frontmatter
+.frontmatter/
 frontmatter.json
 _archive/
