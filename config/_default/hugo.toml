@@ -123,8 +123,8 @@ summaryLength = 0
 
     [[module.imports.mounts]]
       source = "README.md" # readme about galaxy tools
-      target = "content/docs/GESS/galaxy-tools.md"
+      target = "content/docs/galaxy-tools/galaxy-tools.md"
 
     [[module.imports.mounts]]
       source = "CONTRIBUTING.md"
-      target = "content/docs/GESS/how-to-contribute-new-tool.md"
+      target = "content/docs/galaxy-tools/how-to-contribute-new-tool.md"

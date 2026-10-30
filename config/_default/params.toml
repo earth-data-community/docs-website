@@ -87,15 +87,17 @@ thumbnailAspectRatio = "1.5"
 
   # Exact single-file mounts (README.md, CONTRIBUTING.md)
   [[editLinks.files]]
-    targetPath = "docs/galaxy-tools/_index.md"
+    targetPath = "docs/galaxy-tools/galaxy-tools.md"
     sourcePath = "README.md"
   [[editLinks.files]]
     targetPath = "docs/galaxy-tools/how-to-contribute-new-tool.md"
     sourcePath = "CONTRIBUTING.md"
 
   # Mounted subtree: docs/galaxy-tools/tools/** -> tools/**
+  # Scoped to tools/ so local pages under docs/galaxy-tools/ keep their own
+  # edit links (the catch-all entry below) instead of pointing at the module.
   [[editLinks.rules]]
-    targetPrefix = "docs/galaxy-tools/"
+    targetPrefix = "docs/galaxy-tools/tools/"
     sourcePrefix = ""
 
 [[editLinks]]
