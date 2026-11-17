@@ -6,6 +6,6 @@ exampleSite/public/
 .vscode
 .vscodium
 resources/
-.frontmatter/
-frontmatter.json
 _archive/
+frontmatter.json
+.frontmatter/

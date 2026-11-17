@@ -1,4 +1,6 @@
 github.com/earth-data-community/galaxy-tools v0.0.0-20260826143255-93ac365b3fe2 h1:C2je6Vz0A6xdQqDDiH8JYQT4Mct7YTIIH9Wk/tH/w8s=
 github.com/earth-data-community/galaxy-tools v0.0.0-20260826143255-93ac365b3fe2/go.mod h1:QkQBBH508pQDP+OnEC8G4xImfoYyJ1temxObsawtuDA=
+github.com/earth-data-community/galaxy-tools v0.0.0-20261029142050-fe60823d29a3 h1:NlnbOZiw9PCKfP2RUgEaYkrW3ZNPsApjehScZ2XWR7Q=
+github.com/earth-data-community/galaxy-tools v0.0.0-20261029142050-fe60823d29a3/go.mod h1:QkQBBH508pQDP+OnEC8G4xImfoYyJ1temxObsawtuDA=
 github.com/nunocoracao/blowfish/v3 v3.9.0 h1:I7XCUIeDZuvxceV2QZAmUeUqGImra02PT/gklvRb9B4=
 github.com/nunocoracao/blowfish/v3 v3.9.0/go.mod h1:8lJwR95VgcyWDhjKvUJMdOQXogrmhYSxkWh4ogSJfCg=
