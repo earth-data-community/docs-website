@@ -96,9 +96,9 @@ thumbnailAspectRatio = "1.5"
   # Mounted subtree: docs/galaxy-tools/tools/** -> tools/**
   # Scoped to tools/ so local pages under docs/galaxy-tools/ keep their own
   # edit links (the catch-all entry below) instead of pointing at the module.
-  [[editLinks.rules]]
-    targetPrefix = "docs/galaxy-tools/tools/"
-    sourcePrefix = ""
+  # [[editLinks.rules]]
+  #   targetPrefix = "docs/galaxy-tools/tools/"
+  #   sourcePrefix = ""
 
 [[editLinks]]
   modulePath = ""
