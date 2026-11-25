@@ -1,11 +1,9 @@
 ---
-title:  User Access Policy
+title:  User Access Policy - EOSC Node Data Terra
 weight: 2
 version: 1.1
 
 ---
-
-# User Access Policy – EOSC Node Data Terra
 This User Access Policy (“UAP”) explains who may use the resources and services of the Data Terra Node, and how you obtain access to them.
 
 ## Federated authentication
@@ -25,15 +23,15 @@ This User Access Policy (“UAP”) explains who may use the resources and servi
 The EOSC Node Data Terra respects the applicable legal framework for the protection of personal data, in particular the Regulation (EU) 2016/679 (General Data Protection Regulation – GDPR) and applicable French data protection legislation.  
 This Privacy Policy explains how personal data are processed when users access the services of the EOSC Node Data Terra, including its federated authentication and authorisation services.
 
-## 1\. Service information**
+## 1\. Service information
 
 |  |  |
 | :---- | :---- |
 | **Name of the service** | EOSC Node Data Terra  |
 | **Description of the service** | Federated access, authentication and authorisation services provided by the EOSC Node Data Terra to enable users to access Data Terra and EOSC-related resources and services. |
 | **Data Controller** | Data Terra |
-| **Contact** | Data Terra – \[[contact@earth-data.eu](mailto:contact@earth-data.eu)\] |
-| **Helpdesk / Data Protection Officer** | \[[security@earth-data.eu](mailto:security@earth-data.eu)\] |
+| **Contact** | Data Terra – [contact@earth-data.eu](mailto:contact@earth-data.eu) |
+| **Helpdesk / Data Protection Officer** | [security@earth-data.eu](mailto:security@earth-data.eu)|
 | **Jurisdiction / establishment** | France |
 
 The precise allocation of responsibilities under the GDPR may depend on the service accessed. Where another organisation acts as the data controller for a specific service, users will be informed through the privacy notice applicable to that service.
